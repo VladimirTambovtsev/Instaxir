@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import PhotoCard from '../components/PhotoCard/PhotoCard'
 
 
 export default class HomeScreen extends React.Component {
@@ -19,8 +20,8 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <Text>Main</Text>
+        <ScrollView style={styles.container} >
+          <PhotoCard />
         </ScrollView>
       </View>
     );
@@ -39,9 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
-  },
-  contentContainer: {
-    paddingTop: 30,
   },
   welcomeContainer: {
     alignItems: 'center',
