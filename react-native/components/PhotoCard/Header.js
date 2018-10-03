@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
-
 import Touchable from '@appandflow/touchable'
 import { Ionicons } from '@expo/vector-icons';
 import { Icon } from 'expo';
 import { human, systemWeights } from 'react-native-typography'
+
 
 
 const makeCircle = size => ({
