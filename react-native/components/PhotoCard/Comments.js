@@ -32,7 +32,7 @@ export default function Comments({
 				</Text>
 			</View>
 			<View style={styles.wrapper}>
-				<Text style={styles.text}>
+				<Text numberOfLines={2} style={styles.text}>
 					<Text style={systemWeights.regular}>{username}: </Text>
 					{caption}
 				</Text>

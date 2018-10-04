@@ -10,7 +10,8 @@ import CommentInput from './CommentInput'
 
 const styles = StyleSheet.create({
 	root: {
-		minHeight: 600
+		minHeight: 600,
+		paddingBottom: 50
 	},
 	img: {
 		flex: 1
@@ -32,9 +33,9 @@ class PhotoCard extends Component {
 		return (
 			<View style={styles.root}>
 				<Header />
-				<Image source={{ uri: 'https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' }} style={styles.img} />
+				<Image source={{ uri: this.props.data.imageUrl }} style={styles.img} />
 				<ActionBtns />
-				<Comments />
+				<Comments caption={this.props.data.caption} />
 				<View style={styles.commentsWrapper}>
 					<Touchable feedback="opacity">
 						<Text style={styles.commentViewAll}>View all 13 comments</Text>
