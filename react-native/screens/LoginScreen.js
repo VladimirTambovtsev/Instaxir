@@ -43,11 +43,12 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: '#E4E4E4',
 		borderRadius: 5,
-		marginBottom: 10
+		marginBottom: 10,
+		padding: 10
 	},
 	input: {
 		flex: 1,
-		padding: 10,
+		padding: 0		
 	},
 	loginBtn: {
 		height: 45,
