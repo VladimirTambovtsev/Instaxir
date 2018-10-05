@@ -2,10 +2,11 @@ import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-client-preset';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon } from 'expo';
+import { AppLoading, Asset, Font, Icon, SecureStore } from 'expo';
+
 
 import AppNavigator from './navigation/AppNavigator';
-
+import LoginScreen from './screens/LoginScreen'
 
 
 const client = new ApolloClient({
@@ -18,7 +19,15 @@ export default class App extends React.Component {
     isLoadingComplete: false,
   };
 
+  async componentDidMount() {
+     await SecureStore.setItemAsync('secure_token','sahdkfjaskdflas$%^&');
+    const token = await SecureStore.getItemAsync('secure_token');
+    console.log('token: ', token); // output: sahdkfjaskdflas$%^&
+  }
+
   render() {
+   
+
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
@@ -28,11 +37,20 @@ export default class App extends React.Component {
         />
       );
     } else {
+      // if user has JWT render App,
+      // otherwise render LoginScreen
+
+      /*
+        const token = await AsyncStorage.getItem('@instaxir/token')
+        if (!token) { } else { }
+      */
+
       return (
         <ApolloProvider client={client}>
           <View style={styles.container}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <AppNavigator />
+
+            <LoginScreen />
           </View>
          </ApolloProvider>
       );

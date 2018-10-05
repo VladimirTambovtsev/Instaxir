@@ -43,11 +43,6 @@ class HomeScreen extends React.Component {
       )
     }
 
-      // <View style={styles.container}>
-      //   <ScrollView style={styles.container} contentContainerStyle={styles.scrollViewContent}>
-      //     <PhotoCard />
-      //   </ScrollView>
-      // </View>
     return (
       <View style={styles.container}>
         <FlatList 
